@@ -1,8 +1,8 @@
 # -*- mode: dockerfile; coding: utf-8 -*-
 FROM debian:buster-slim AS build
 RUN apt-get update && apt-get -y --no-install-recommends install \
-       build-essential ncurses-dev \
-  && rm -rf /var/lib/apt/lists/*
+      build-essential ncurses-dev \
+ && rm -rf /var/lib/apt/lists/*
 WORKDIR /build
 ADD https://www.t3x.org/s9fes/s9fes-20181205.tgz s9fes.tgz
 RUN mkdir s9fes && tar -C s9fes --strip-components 1 -xf s9fes.tgz
